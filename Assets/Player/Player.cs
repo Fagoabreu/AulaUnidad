@@ -1,8 +1,31 @@
 using UnityEngine;
 
-public class Player
+public class Player : MonoBehaviour
 {
-    public string nome;
-    public int velocidade;
-    public int vida;
+    [SerializeField] private string nome;
+    [SerializeField] private int vida;
+
+    private PlayerInputAdapter playerInput;
+    private PlayerMovement playerMovement;
+
+
+    private void Awake()
+    {
+        playerInput = GetComponent<PlayerInputAdapter>();
+        playerMovement = GetComponent<PlayerMovement>();
+    }
+
+    private void Start()
+    {
+
+    }
+
+    private void Update()
+    {
+        InputFrame inputFrame = playerInput.GetInputFrame();
+        playerMovement.SetInputFrame(inputFrame);
+
+
+    }
+
 }

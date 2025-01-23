@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "AulaUnidad.sln"
+    "dotnet.defaultSolution": "AulaUnidad2.sln"
 }
